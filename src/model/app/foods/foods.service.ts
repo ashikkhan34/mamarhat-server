@@ -15,6 +15,7 @@ const getAllFoodService = async ()=>{
 
 const getAFoodService = async(id:string)=>{
     return await foodsModel.findById(id)
+    .populate('category')
 }
 
 const updateFoodService = async (id:string, payload:Partial<IFood>) =>{
