@@ -16,7 +16,7 @@ const cartSchema = new Schema<ICartItem>(
           ref: "Food",
           required: true,
         },
-        qty: {
+        quantity: {
           type: Number,
           required: true,
           min: 1,
