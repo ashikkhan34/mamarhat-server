@@ -33,5 +33,3 @@ export const foodService = {
     updateFoodService,
     deleteFoodService
 }
-
-// update file
