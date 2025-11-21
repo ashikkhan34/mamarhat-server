@@ -11,7 +11,7 @@ export const createPaymentService = async (paymentData: IPayment) => {
     amount: Math.round(paymentData.amount * 100),
     currency: paymentData.currency,
     metadata: {
-      orderId: paymentData.orderId.toString(),
+      orderId: paymentData.cartId.toString(),
       userId: paymentData.userId.toString(),
     },
   });

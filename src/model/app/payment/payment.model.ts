@@ -9,9 +9,9 @@ const paymentSchema = new Schema<IPayment>(
       required: true,
     },
 
-    orderId: {
+    cartId: {
       type: Schema.Types.ObjectId,
-      ref: "Order",
+      ref: "Cart",
       required: true,
     },
 
@@ -37,7 +37,7 @@ const paymentSchema = new Schema<IPayment>(
       required: true,
     },
 
-    transactionId: {
+    paymentIntent: {
       type: String,
       default: "",
     },

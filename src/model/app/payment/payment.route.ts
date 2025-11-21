@@ -4,6 +4,6 @@ import { createPayment, confirmPayment } from "./payment.controller.js";
 const router = Router();
 
 router.post("/init", createPayment);
-router.post("/confirm/:transactionId", confirmPayment);
+router.post("/confirm/:paymentIntent", confirmPayment);
 
 export default router;
