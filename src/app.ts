@@ -10,6 +10,7 @@ import { userRouter } from './model/app/user/user.route.js';
 import { cartRouter } from './model/app/cart/cart.route.js';
 import { authRouter } from './model/auth/auth.route.js';
 import { restaurantRouter } from './model/app/restaurant/restaurant.route.js';
+import { favoriteRouter } from './model/app/Favorite/favorite.route.js';
 
 const app = express()
 
@@ -26,6 +27,7 @@ app.use('/api/user',userRouter)
 app.use('/api/cart',cartRouter)
 app.use('/api/auth',authRouter)
 app.use('/api/restaurant',restaurantRouter)
+app.use("/api/favorite", favoriteRouter);
 
 app.get('/', (req, res) => {
   res.send('mamarhat is running')
