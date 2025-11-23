@@ -12,11 +12,23 @@ import { restaurantRouter } from './model/app/restaurant/restaurant.route.js';
 import { favoriteRouter } from './model/app/Favorite/favorite.route.js';
 
 const app = express()
-
-app.use(cors({
-  origin: ["https://mamarhat-c.vercel.app/"],
-  credentials: true
-}));
+const allowedOrigins = [
+  "https://mamarhat-c.vercel.app",
+  "http://localhost:3000"
+];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    credentials: true,
+  })
+);
 app.use(express.json())
 app.use(globalErrorHandler)
 app.use(cookieParser());
